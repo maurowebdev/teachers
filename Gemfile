@@ -6,6 +6,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
