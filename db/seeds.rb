@@ -5,8 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-City.create([
+City.first_or_create([
     {name: 'Medellín'},
     {name: 'Bogotá'},
     {name: 'Barranquilla'},
@@ -14,4 +13,9 @@ City.create([
     {name: 'Cali'},
     {name: 'Cartagena'},
     {name: 'Bucaramanga'}
+  ])
+
+Type.first_or_create([
+  {name: 'Presencial'},
+  {name: 'Virtual'}
   ])

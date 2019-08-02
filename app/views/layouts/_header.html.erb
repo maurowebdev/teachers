@@ -16,11 +16,12 @@ Header
         <li class="active"><a href="#intro">Home</a></li>
 
         <% if user_signed_in? %>
-          <li class="drop-down"><a href="">User</a>
+          <li class="drop-down"><a href=""><img src="<%=@avatar %>" class="rounded-circle"></a>
             <ul>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
+
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
