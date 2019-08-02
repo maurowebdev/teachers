@@ -14,10 +14,7 @@ Header
     <nav class="main-nav float-right d-none d-lg-block">
       <ul>
         <li class="active"><a href="#intro">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#team">Team</a></li>
+
         <% if user_signed_in? %>
           <li class="drop-down"><a href="">User</a>
             <ul>
@@ -29,7 +26,8 @@ Header
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
 
         <% end %>
-        <li><a href="#footer">Contact Us</a></li>
+        <li><%= link_to "Become a Student", new_user_registration_path(role: "student") %></li>
+        <li><%= link_to "Become a Student", new_user_registration_path(role: "teacher") %></li>
       </ul>
     </nav><!-- .main-nav -->
 
