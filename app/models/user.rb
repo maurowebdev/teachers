@@ -4,9 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :send_welcome_email
+  belongs_to :city
+  after_create :send_welcome_email, :set_role
 
+  enum role: [:user, :student, :teacher, :admin]
   def send_welcome_email
     UserNotifierMailer.welcome_user(self).deliver
+  end
+
+  def set_role
+    self.user!
   end
 end
